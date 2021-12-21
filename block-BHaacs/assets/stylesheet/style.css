@@ -75,7 +75,8 @@ input, select {
     padding: 0 2rem;
 }
 .padding {
-    padding: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 a {
     text-decoration: none;
@@ -170,17 +171,6 @@ a {
     font-weight: 500;
     margin-bottom: 2rem;
 }
-.heading-secondary {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-    color: var(--text);
-    font-weight: 800;
-}
-.para-secondary {
-    font-size: 1rem;
-    color: var(--text-second);
-    font-weight: 400;
-}
 /* HEADER */
 header {
     background-color: var(--primary);
@@ -206,30 +196,12 @@ header {
 #toggle {
     display: none;
 }
-.sub-menu li a{
-    margin-bottom: 2.2rem;
-    font-size: 0.8rem;
-    color: var(--text);
-}
-.sub-menu, .sub-menu-2{
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    width: 7rem;
-    border-radius: 3px;
-    left: 50%;
-    transform: translate(-50%);
-    top: 1.3rem;
-    padding: 1rem 0;
-    display: none;
-}
 
 /* HERO */
 .hero {
     background-color: var(--primary);
     text-align: center;
-    height: 105vh;
-   
+    height: 90vh;
 }
 .relative{
 	position: relative;
@@ -238,7 +210,7 @@ header {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 20%;
+	top: 30%;
 }
 h1 {
     font-size: 3rem;
@@ -247,33 +219,36 @@ h1 {
 }
 /* Using Pseudo Class*/
 button:first-of-type {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 15rem;
     padding: 0.8rem 1.8rem;
     border: none;
     border-radius: 0.3rem;
 }
-img:first-of-type {
+.hero img:first-of-type {
     width: 80%;
-    
 }
 .absolute-img{
 	position: absolute;
 	left: 0;
 	right: 0;
-    top: 30%;
+    top: 34%;
+}
+.files {
+    border-bottom: 1px solid #a5a5a7;
+    padding-bottom: 4rem;
 }
 .sec2 {
-    margin-top: 20rem;
+    margin-top: 15rem;
 }
 .sec2 h3 {
-    color: var(--text);
+    color: #a5a5a7;
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 .sec2 img {
     font: 0;
-    
+    vertical-align: middle;
 }
 .sec3 button {
     margin: 0;
@@ -430,7 +405,7 @@ th{
 .free-trial {
     background-color: var(--primary);
     border-radius: 3rem;
-    margin: 8rem 4rem;
+    margin: 8rem 0;
     color: white;
     font-size: 2rem;
     font-weight: 600;
@@ -457,11 +432,59 @@ th{
     color: var(--text-second);
 }
 .footer-social a {
-    margin-right: 0.4rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
     color: #fff;
     background-color: var(--primary);
-    padding: 0.6rem;
+    padding: 0.8rem;
     border-radius: 50%;
     font-size: 0.8rem;
+    display: inline-block;
 }
 
+/* SMALL SCREEN */
+
+@media screen and (max-width: 780px) {
+    html {
+        font-size: 12px;
+    }
+    .container {
+        max-width: 720px;
+    }
+    .brand {
+        z-index: 999;
+    }
+    .nav-bar {
+       display: none;
+   }
+   #toggle:checked ~ .nav-bar {
+       display: inline-block;
+   }
+   .nav-bar {
+       position: fixed;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       top: 0;
+       width: 100%;
+       height: auto;
+       background-color: rgba(253, 244, 244, 0.9);
+       padding-top: 8rem;
+       z-index: 99;
+   }
+   .nav-item-li, .dropdown {
+       margin: 1rem auto;
+   }
+   .nav-item {
+       color: var(--primary);
+       font-size: 1.5rem;
+   }
+   .bars {
+       display: block;
+       font-size: 2rem;
+       font-weight: 900;
+       color: white;
+       z-index: 999;
+       position: absolute;
+       right: 2rem;
+   }    
